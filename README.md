@@ -6,17 +6,11 @@
 
 # How it works
 
-bla bla bla
+This project allow to predict bike activity in paris
 
 # Setup Google Cloud Platform
 
 > GCP > Create Project > `${projectName}`
-
-> GCP > IAM et Administration > Service account > Create a service account `${serviceAccountName`
-
-> GCP > IAM et Administration > Service account > `${serviceAccountName}` > Key > Create key 
-
-> Save download key into `server` folder as `googleKeys.json`
 
 # Setup infra
 
@@ -38,23 +32,23 @@ $ terraform init
 $ terraform apply -auto-approve 
 ```
 
-# Setup server
+# Setup database 
+
+> GCP > SQL > mydatabaseinstance > users > Add user 
+> GCP > SQL > mydatabaseinstance > networks > add network > `${your ip}` > Save
+> GCP > SQL > mydatabaseinstance > database > create new database > `bike__prediction`
+
+# Download dataset
 
 ```sh
 # Move to server directory
-$ cd server 
+$ cd server
 
 # Install deps
 $ (yarn | npm) install
 
 # Transform and fill `env.template` to `.env` file 
 
-# Launch (hot reload)
-$ npm run dev
+# Download all dataset + insert into db
+$ tsc && node ./dist/scripts/fillDb.js
 ```
-
-# Setup database 
-
-> GCP > SQL > mydatabaseinstance > users > Add user 
-> GCP > SQL > mydatabaseinstance > networks > add network > `${your ip}` > Save
-> GCP > SQL > mydatabaseinstance > database > create new database > `bike__prediction`
