@@ -41,8 +41,8 @@ $ terraform apply -auto-approve
 # Download dataset
 
 ```sh
-# Move to server directory
-$ cd server
+# Move to src directory
+$ cd src
 
 # Install deps
 $ (yarn | npm) install
