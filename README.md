@@ -3,6 +3,8 @@
 - Google Cloud account
 - gcloud CLI
 - Terraform CLI
+- Jupyter Notebook
+- Keras / SKLearn
 
 # How it works
 
@@ -52,3 +54,20 @@ $ (yarn | npm) install
 # Download all dataset + insert into db
 $ tsc && node ./dist/scripts/fillDb.js
 ```
+
+# Launch prediction
+
+model/Algorithmes_de_prediction.ipynb
+
+Concentration on the 2 counting stations with the most traffic:
+- Sébastopol
+- Rivoli
+
+Comparison between 5 regression algorithms :
+- RandomForestRegressor
+- AdaBoostRegressor
+- BaggingRegressor
+- KNeighborsRegressor
+- SVR
+
+Optimization of the best algorithm by simulated annealing
